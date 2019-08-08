@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper{
+        perspective: 800px;
+    }
+    .box {
+        position: relative;
+        margin: 0 auto;
+        width: 200px;
+        height: 200px;
+        margin-top: 200px;
+        transform: rotateX(-20deg) rotateY(-20deg);
+        transform-style: preserve-3d;
+        animation: turn 5s linear infinite;
+    }
+
+    .box>div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+        color: #FFF;
+        opacity: 0.5;
+    }
+
+    .box>div:nth-child(1) {
+        background-color: darkgoldenrod;
+        transform: translateZ(100px);
+    }
+
+    .box>div:nth-child(2) {
+        background-color: fuchsia;
+        transform: rotateX(90deg) translateZ(100px);
+    }
+
+    .box>div:nth-child(3) {
+        background-color: palevioletred;
+        transform: translateZ(-100px);
+    }
+
+    .box>div:nth-child(4) {
+        background-color: blueviolet;
+        transform: rotateX(-90deg) translateZ(100px);
+    }
+
+    .box>div:nth-child(5) {
+        background-color: cornflowerblue;
+        transform: rotateY(90deg) translateZ(100px);
+    }
+
+    .box>div:nth-child(6) {
+        background-color: crimson;
+        transform: rotateY(90deg) translateZ(-100px);
+    }
+
+    @keyframes turn {
+        0%{
+            transform: rotateX(0) rotateY(0) rotateZ(0);
+        }
+        100%{
+            transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+        }
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
